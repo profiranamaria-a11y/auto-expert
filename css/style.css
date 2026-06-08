@@ -484,7 +484,6 @@ footer h5 {
    10. MEDIA QUERIES (RESPONSIVENESS COMPLET)
    ========================================================================== */
 
-/* Dispozitive Mobile (<768px) */
 @media (max-width: 767.98px) {
     :root {
         --navbar-height: 75px;
@@ -496,13 +495,45 @@ footer h5 {
         padding-top: calc(var(--navbar-height) + 30px) !important;
         padding-bottom: 50px;
     }
+
+    /* ---- REGLAJE MENIU COMOD FĂRĂ HAMBURGER ---- */
+    /* 1. Ascundem complet butonul cu 3 linii */
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* 2. Forțăm meniul să stea deschis nativ */
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    /* 3. Așezăm link-urile orizontal și activăm scroll-ul lateral cu degetul */
+    .navbar-nav {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 4. Stilzăm link-urile individuale să fie aerisite ca niște butoane */
     .navbar-nav .nav-link {
-        padding: 14px 20px !important; 
-        border-bottom: 1px solid var(--border-color);
+        padding: 6px 12px !important; 
+        margin-right: 8px !important;
+        border-bottom: none !important; /* Eliminăm vechea linie de dedesubt */
+        font-size: 0.9rem !important;
     }
-    .navbar-nav .nav-item:last-child .nav-link {
-        border-bottom: none;
+
+    /* 5. Ascundem bara de scroll urâtă din subsolul meniului */
+    .navbar-nav::-webkit-scrollbar {
+        display: none !important;
     }
+    /* ------------------------------------------- */
+
     blockquote::before, 
     blockquote::after {
         font-size: 2.5rem;

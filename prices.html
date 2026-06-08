@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prețuri Manoperă și Calculator Estimativ | Auto Expert</title>
+    <meta name="description" content="Verifică tarifele transparente practicate de Auto Expert și folosește calculatorul nostru online.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">AUTO <span class="text-primary-custom">EXPERT</span></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li><a class="nav-link" href="team.html">Echipa</a></li>
+                    <li><a class="nav-link active" href="prices.html">Prețuri</a></li>
+                    <li><a class="nav-link" href="gallery.html">Galerie</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container page-padding">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Transparență în <span class="text-primary-custom">Prețuri</span></h1>
+            <p class="text-muted">Află costul înainte de a lăsa mașina în atelier. Fără surprize pe factură.</p>
+        </div>
+
+        <div class="row g-5 mb-5">
+            <div class="col-lg-5">
+                <div class="p-4 custom-card rounded">
+                    <h3 class="text-white mb-4"><i class="fa-solid fa-calculator text-primary-custom me-2"></i>Calculator Estimare</h3>
+                    <form id="calcForm">
+                        <div class="mb-3">
+                            <label for="serviceType" class="form-label text-white">Selectează Serviciul</label>
+                            <select id="serviceType" class="form-select bg-dark text-white border-secondary">
+                                <option value="0" selected disabled>Alege un serviciu...</option>
+                                <option value="600">Schimb Ulei și Filtre (600 MDL)</option>
+                                <option value="800">Înlocuire Plăcuțe Frână (800 MDL)</option>
+                                <option value="450">Diagnoză Computerizată (450 MDL)</option>
+                                <option value="2800">Vopsit Element Caroserie (2800 MDL)</option>
+                                <option value="400">Verificare Completă / Diagnostic (400 MDL)</option>
+                                <option value="4500">Schimb Kit Distribuție Lanț (4500 MDL)</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-white d-block">Marcă / Clasă Vehicul</label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="carClass" id="stdClass" value="1.0" checked>
+                                <label class="form-check-label text-muted" for="stdClass">Volum / Standard (Dacia, Skoda, Toyota)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="carClass" id="premClass" value="1.3">
+                                <label class="form-check-label text-muted" for="premClass">Premium / Lux / SUV (BMW, Mercedes, Audi) (+30%)</label>
+                            </div>
+                        </div>
+                        <div class="p-3 mb-4 bg-black text-center rounded border border-secondary">
+                            <span class="text-muted d-block small text-uppercase">Total Estimativ Manoperă</span>
+                            <h2 class="display-5 fw-bold text-primary-custom mb-0"><span id="calcTotal">0</span> MDL</h2>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary-custom w-100 py-2">Rezervă Programare</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <h3 class="text-white mb-3">Listă Tarife Manoperă de Bază</h3>
+                <p class="text-muted small">Apasă pe capetele de tabel pentru a sorta alfabetic sau după preț.</p>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle border border-secondary" id="pricesTable">
+                        <thead>
+                            <tr style="cursor: pointer;">
+                                <th scope="col" id="sortByService">Serviciu Auto <i class="fa-solid fa-sort ms-1 small"></i></th>
+                                <th scope="col" id="sortByPrice" class="text-end">Preț Mediu (MDL) <i class="fa-solid fa-sort ms-1 small"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Schimb Ulei și Filtre</td><td class="text-end fw-bold">600</td></tr>
+                            <tr><td>Înlocuire Plăcuțe Frână</td><td class="text-end fw-bold">800</td></tr>
+                            <tr><td>Diagnoză Computerizată</td><td class="text-end fw-bold">450</td></tr>
+                            <tr><td>Vopsit Element Caroserie</td><td class="text-end fw-bold">2800</td></tr>
+                            <tr><td>Verificare Completă / Diagnostic</td><td class="text-end fw-bold">400</td></tr>
+                            <tr><td>Schimb Kit Distribuție Lanț</td><td class="text-end fw-bold">4500</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-secondary my-5">
+
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="p-4 bg-dark rounded border border-secondary text-white">
+                    <h4 class="mb-3 text-primary-custom"><i class="fa-solid fa-shield-halved me-2"></i>Garanție și Certificare</h4>
+                    <p class="text-muted">La <strong>Auto Expert</strong>, calitatea nu este negociabilă. Toate intervențiile realizate în atelierul nostru beneficiază de garanție conform legislației RM:</p>
+                    <ul class="list-unstyled text-muted ps-2">
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary-custom me-2"></i><strong>24 de Luni</strong> garanție pentru piesele de schimb originale achiziționate prin intermediul service-ului.</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary-custom me-2"></i><strong>Până la 12 Luni</strong> garanție pentru manoperă (în funcție de tipul lucrării).</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary-custom me-2"></i>Echipă specializată și aparatură omologată pentru reparații la standarde europene.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <h4 class="text-white mb-4"><i class="fa-solid fa-circle-question text-primary-custom me-2"></i>Întrebări Frecvente</h4>
+                <div class="accordion accordion-flush border border-secondary rounded" id="faqPrices">
+                    <div class="accordion-item bg-dark text-white">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Prețurile afișate includ și costul pieselor?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqPrices">
+                            <div class="accordion-body text-muted">
+                                Nu, tarifele prezente în tabel reprezintă exclusiv costul manoperei. Costul pieselor de schimb (ulei, filtre, componente de caroserie etc.) se calculează separat în baza codului VIN al automobilului dumneavoastră.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark text-white">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                De ce prețul variază pentru mașinile de clasă Premium sau SUV?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqPrices">
+                            <div class="accordion-body text-muted">
+                                Automobilele din clasa premium (ex. Audi, BMW, Mercedes) sau SUV-urile necesită un proces mai complex de demontare/montare, utilizarea scanerelor de diagnoză specifice și un timp de lucru alocat mai mare pentru a garanta o execuție perfectă.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark text-white">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Se oferă bon fiscal și factură pentru servicii?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqPrices">
+                            <div class="accordion-body text-muted">
+                                Da, absolut toate lucrările executate în service-ul nostru sunt însoțite de factură fiscală, bon de plată și actul de primire-predare a automobilului, acestea fiind și baza legală a garanției oferite.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5 text-white mt-auto">
+        <div class="container text-center text-muted small">&copy; 2026 Auto Expert. Prețuri în MDL reflectate corect.</div>
+    </footer>
+
+    <button id="backToTop" aria-label="Mergi în sus"><i class="fa-solid fa-arrow-up"></i></button>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const table = document.getElementById("pricesTable");
+        if (!table) return;
+        
+        const tbody = table.querySelector("tbody");
+        const btnService = document.getElementById("sortByService");
+        const btnPrice = document.getElementById("sortByPrice");
+        
+        let ascService = true;
+        let ascPrice = true;
+
+        // 1. Sortare Alfabetică după Nume Serviciu
+        if (btnService) {
+            btnService.addEventListener("click", () => {
+                const rows = Array.from(tbody.querySelectorAll("tr"));
+                rows.sort((a, b) => {
+                    const nameA = a.cells[0].textContent.trim();
+                    const nameB = b.cells[0].textContent.trim();
+                    return ascService ? nameA.localeCompare(nameB, 'ro') : nameB.localeCompare(nameA, 'ro');
+                });
+                ascService = !ascService;
+                rows.forEach(row => tbody.appendChild(row));
+            });
+        }
+
+        // 2. Sortare Numerică după Preț (Fără erori de string)
+        if (btnPrice) {
+            btnPrice.addEventListener("click", () => {
+                const rows = Array.from(tbody.querySelectorAll("tr"));
+                rows.sort((a, b) => {
+                    const priceA = parseFloat(a.cells[1].textContent.replace(/[^\d.]/g, '')) || 0;
+                    const priceB = parseFloat(b.cells[1].textContent.replace(/[^\d.]/g, '')) || 0;
+                    return ascPrice ? priceA - priceB : priceB - priceA;
+                });
+                ascPrice = !ascPrice;
+                rows.forEach(row => tbody.appendChild(row));
+            });
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,34 +1,18 @@
-/* ==========================================================================
-   1. CONFIGURĂRI GENERALE & VARIABILE
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-    --primary-color: #D32F2F;        
-    --primary-hover: #B71C1C;        
-    --accent-color: #607D8B;         
-    --bg-dark: #0F0F11;              
-    --bg-section: #16161A;           
-    --bg-card: #1F1F24;              
-    --border-color: #2D2D35;         
-    
-    /* Culori text cu contrast ridicat */
-    --text-light: #FFFFFF;           
-    --text-body: #E0E0E6;            
-    --text-muted: #A0A0AA;           
-    
-    /* Tipografie, Spațiere și Efecte */
-    --font-title: 'Oswald', sans-serif;
-    --font-body: 'Roboto', sans-serif;
-    --navbar-height: 85px;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    --glow-effect: 0 0 15px rgba(211, 47, 47, 0.4);
+    --primary: #D32F2F;
+    --primary-hover: #B71C1C;
+    --dark: #0F0F11;
+    --section: #16161A;
+    --card: #1F1F24;
+    --border: #2D2D35;
+    --text: #FFFFFF;
+    --text-body: #E0E0E6;
+    --text-muted: #A0A0AA;
+    --glow: 0 0 15px rgba(211,47,47,0.4);
 }
 
-/* ==========================================================================
-   2. RESETĂRI & STILURI DE BAZĂ (ELEMENTE HTML)
-   ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -36,33 +20,11 @@
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--bg-dark);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark);
     color: var(--text-body);
     line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-/* Utilitare text și structură secundară */
-.text-muted {
-    color: var(--text-muted) !important;
-}
-
-.text-primary-custom {
-    color: var(--primary-color) !important;
-}
-
-.cursor-pointer {
-    cursor: pointer;
 }
 
 img {
@@ -71,562 +33,292 @@ img {
     display: block;
 }
 
-/* Layout utilitar pentru pagini secundare */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.text-muted { color: var(--text-muted) !important; }
+.text-primary-custom { color: var(--primary) !important; }
+.bg-dark-section { background-color: var(--section); }
+.bg-black { background-color: #0A0A0C; }
+
 .page-padding {
-    padding-top: calc(var(--navbar-height) + 50px) !important;
+    padding-top: 140px !important;
     padding-bottom: 80px;
 }
 
-.bg-dark-section {
-    background-color: var(--bg-section);
-}
-
-.bg-black {
-    background-color: #0A0A0C;
-}
-
-/* ==========================================================================
-   3. STRUCTURĂ NAVIGARE (NAVBAR FIXED)
-   ========================================================================== */
-
-   .navbar {
-    background-color: rgba(15, 15, 17, 0.95) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--primary-color);
+/*navbar*/
+.navbar.navbar-premium-capsule {
+    background-color: var(--dark) !important; 
+    border-bottom: 2px solid var(--primary);
     padding: 15px 0;
-    transition: var(--transition-smooth);
     z-index: 1030;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
 }
 
-.navbar-brand {
-    font-family: var(--font-title);
-    font-size: 1.6rem;
-    letter-spacing: 2px;
+/*capsula rotunda ecrane mari */
+@media (min-width: 992px) {
+    .navbar.navbar-premium-capsule {
+        top: 20px !important;
+        max-width: 1260px;
+        margin: 0 auto;
+        border-radius: 50px !important; /* Margini rotunjite pronunțate */
+        border: 2px solid var(--border) !important;
+        border-bottom: 2px solid var(--primary) !important; /* Linie roșie la bază */
+        padding: 5px 30px; 
+    }
 }
 
-.nav-link {
-    font-family: var(--font-title);
-    color: var(--text-light) !important;
+/* Logo/text/imagine */
+.premium-brand-flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-premium-vector {
+    height: 70px; 
+    width: auto;
+    transition: transform 0.55s ease;
+}
+
+.premium-brand-flex:hover .logo-premium-vector {
+    transform: scale(1.05);
+}
+
+.brand-text-digital {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text) !important;
+    line-height: 1;
+}
+
+.brand-text-red {
+    color: #FF3D00 !important;
+}
+
+/* Link-uri/hover effect */
+.navbar-nav .nav-link {
+    font-family: 'Oswald', sans-serif;
+    color: var(--text) !important;
     text-transform: uppercase;
     font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
     padding: 8px 16px !important;
     position: relative;
-    transition: var(--transition-smooth);
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover, 
-.nav-link.active {
-    color: var(--primary-color) !important;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
 }
 
-/* Efect premium linie de decor la hover (Desktop) */
 @media (min-width: 1200px) {
-    .nav-link::after {
+    .navbar-nav .nav-link::after {
         content: '';
         position: absolute;
         width: 0;
         height: 2px;
         bottom: 0;
         left: 16px;
-        background-color: var(--primary-color);
-        transition: var(--transition-smooth);
+        background-color: var(--primary);
+        transition: width 0.3s ease;
     }
-    .nav-link:hover::after,
-    .nav-link.active::after {
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
         width: calc(100% - 32px);
     }
 }
 
 .navbar-toggler {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--primary);
     padding: 6px 10px;
 }
 
 .navbar-toggler:focus {
-    box-shadow: var(--glow-effect);
-    outline: none;
+    box-shadow: var(--glow);
 }
 
-/* ==========================================================================
-   4. ECRANUL PRINCIPAL (HERO SECTION & FILTRE)
-   ========================================================================== */
 .hero-section {
-    position: relative;
     min-height: 100vh;
-    padding-top: calc(var(--navbar-height) + 40px);
-    background: linear-gradient(rgba(15, 15, 17, 0.7), rgba(15, 15, 17, 0.95)), 
-                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920') center/cover no-repeat;
+    padding-top: 160px; 
     z-index: 1;
 }
 
-/* Filtre tip pastilă (Portofoliu / Servicii) */
+/* filtre galerie */
 .filter-container-pill {
     background-color: #0A0A0C !important;
-    border: 1px solid var(--border-color) !important;
+    border: 1px solid var(--border) !important;
 }
 
 .filter-btn {
-    font-family: var(--font-title);
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     color: var(--text-body) !important;
-    font-weight: 500;
-    border: 1px solid transparent;
     padding: 8px 20px;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
-.filter-btn:hover, 
+.filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--text-light) !important;
-    box-shadow: var(--glow-effect);
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: var(--text) !important;
+    box-shadow: var(--glow);
 }
 
-/* ==========================================================================
-   5. BUTOANE ȘI CARDURI UNIVERSALE (UI PREMIUM)
-   ========================================================================== */
-/* Butonul Custom Roșu */
-.btn-primary-custom, 
-.btn-danger {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--text-light) !important;
-    font-family: var(--font-title);
+/*glow/tranzitii */
+.btn-primary-custom, .btn-danger {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: var(--text) !important;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1px;
     padding: 12px 28px;
     border-radius: 4px;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
-.btn-primary-custom:hover, 
-.btn-danger:hover {
+.btn-primary-custom:hover, .btn-danger:hover {
     background-color: var(--primary-hover) !important;
     border-color: var(--primary-hover) !important;
     transform: translateY(-2px);
-    box-shadow: var(--glow-effect);
+    box-shadow: var(--glow);
 }
 
-/* Butonul de contur Outline */
 .btn-outline-light {
-    border: 2px solid var(--text-light) !important;
-    font-family: var(--font-title);
+    border: 2px solid var(--text) !important;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1px;
     padding: 11px 26px;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
 .btn-outline-light:hover {
-    background-color: var(--text-light) !important;
-    color: var(--bg-dark) !important;
+    background-color: var(--text) !important;
+    color: var(--dark) !important;
     transform: translateY(-2px);
 }
 
-/* Structura de Card Premium */
-.card, 
-.custom-card {
-    background-color: var(--bg-card) !important;
-    border: 1px solid var(--border-color) !important;
+/* card hover/img scalare*/
+.card, .custom-card {
+    background-color: var(--card) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 12px !important;
     overflow: hidden;
-    transition: var(--transition-smooth);
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-.card:hover, 
-.custom-card:hover {
+.card:hover, .custom-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color) !important;
-    box-shadow: var(--card-shadow);
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
 
-.card-body, 
-.custom-card {
+.card-body, .card-text, .custom-card p {
     color: var(--text-body) !important;
 }
 
-.card-body p, 
-.custom-card p, 
-.card-text {
-    color: var(--text-body) !important;
+.card-body i, .custom-card i {
+    transition: transform 0.3s ease;
 }
 
-.card-body h3, 
-.custom-card h3 {
-    margin-bottom: 12px;
-}
-
-.card-body i, 
-.custom-card i {
-    transition: var(--transition-smooth);
-}
-
-.card:hover i, 
-.custom-card:hover i {
+.card:hover i, .custom-card:hover i {
     transform: scale(1.1);
 }
 
-/* --- ADAUGĂ CODUL DE MAI JOS AICI (LA FINALUL SECȚIUNII 5) --- */
 .custom-card .card-img-top {
-    height: 220px;          /* Forțează înălțimea egală pe toate cardurile */
-    object-fit: cover;      /* Decupează imaginea inteligent fără să o deformeze */
-    width: 100%;            /* Se întinde perfect pe lățime */
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
 }
 
-/* ==========================================================================
-   6. PAGINA DE PREȚURI & TESTIMONIALE
-   ========================================================================== */
-/* Citate / Testimoniale */
-blockquote, 
-.blockquote-custom {
-    position: relative;
-    padding: 15px 0;
-    margin: 20px auto;
-}
-
-blockquote::before, 
-blockquote::after {
-    content: '”';
-    color: var(--primary-color) !important;
-    font-size: 3.5rem;
-    font-family: var(--font-title);
-    line-height: 0;
-    vertical-align: middle;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.testimonial-item {
-    background-color: var(--bg-card);
-    padding: 40px;
-    border-radius: 8px;
-    border-left: 5px solid var(--primary-color);
-    box-shadow: var(--card-shadow);
-}
-
-/* Stiluri Tabel Prețuri */
+/*preturi/team */
 .table-dark {
-    --bs-table-bg: var(--bg-card) !important;
-    --bs-table-hover-bg: #25252B !important;
-    border-color: var(--border-color) !important;
+    --bs-table-bg: var(--card) !important;
+    border-color: var(--border) !important;
 }
 
 #pricesTable th {
-    font-family: var(--font-title);
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     background-color: #141418;
-    color: var(--text-light) !important;
+    color: var(--text) !important;
     padding: 16px;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary);
 }
 
 #pricesTable td {
     padding: 16px;
     color: var(--text-body) !important;
-    vertical-align: middle;
 }
 
 #pricesTable tr:hover td {
-    color: var(--text-light) !important;
+    color: var(--text) !important;
 }
 
-/* ==========================================================================
-   7. PAGINA ECHIPĂ (TEAM SECTION)
-   ========================================================================== */
-.team-section .card-title, 
 .team-member-name {
-    color: var(--text-light) !important;
-    font-family: var(--font-title);
+    color: var(--text) !important;
+    font-family: 'Oswald', sans-serif;
     font-size: 1.4rem;
-    margin-bottom: 5px;
 }
 
-.team-section .member-role, 
 .team-member-role {
-    color: var(--primary-color) !important; 
+    color: var(--primary) !important;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    font-size: .9rem;
 }
 
-.team-section .text-muted, 
-.team-member-bio {
-    color: var(--text-body) !important; 
-    margin-top: 12px;
-}
-
-/* ==========================================================================
-   8. COMPONENTE DE FORMULAR & ACCORDION (OVERRIDES BOOTSTRAP)
-   ========================================================================== */
-.form-control, 
-.form-select, 
-input[type="date"] {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-light) !important;
-    border: 1px solid var(--border-color) !important;
+/* formulare */
+.form-control, .form-select, input[type="date"] {
+    background-color: var(--dark) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
     padding: 12px 16px;
     border-radius: 6px;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
-.form-control:focus, 
-.form-select:focus {
-    border-color: var(--primary-color) !important;
-    box-shadow: var(--glow-effect) !important;
-    outline: none;
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: var(--glow) !important;
 }
 
-/* Validări Formular */
-.form-control.is-invalid, 
-.form-select.is-invalid {
-    border-color: #DC3545 !important;
-    box-shadow: 0 0 10px rgba(220, 53, 69, 0.2) !important;
+/*footer/back to top*/
+footer {
+    background-color: #0A0A0C;
+    border-top: 1px solid var(--border);
 }
 
-.form-control.is-valid, 
-.form-select.is-valid {
-    border-color: #198754 !important;
-    box-shadow: 0 0 10px rgba(25, 135, 84, 0.2) !important;
-}
-
-/* Acordeon */
-.accordion-item {
-    background-color: var(--bg-card) !important;
-    margin-bottom: 12px;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 8px !important;
-    overflow: hidden;
-}
-
-.accordion-button {
-    background-color: var(--bg-card) !important;
-    color: var(--text-light) !important;
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    padding: 18px 24px;
-    box-shadow: none !important;
-}
-
-.accordion-button:not(.collapsed) {
-    color: var(--primary-color) !important;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.accordion-button::after {
-    filter: invert(1); 
-}
-
-/* ==========================================================================
-   9. ELEMENTE AUXILIARE (COUNTERS, FOOTER & BACK TO TOP)
-   ========================================================================== */
-.counter-box {
-    border-bottom: 3px solid var(--accent-color) !important;
-}
-
-.counter-box:hover {
-    border-bottom: 3px solid var(--primary-color) !important;
-}
-
-/* Buton Înapoi Sus */
 #backToTop {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 48px;
-    height: 48px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary);
+    color: var(--text);
     border: none;
-    border-radius: 6px;
+    border-radius: 50%;
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 999;
-    cursor: pointer;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition-smooth);
+    z-index: 99;
+    box-shadow: var(--glow);
+    transition: all 0.2s ease;
 }
 
 #backToTop:hover {
     background-color: var(--primary-hover);
-    transform: translateY(-5px);
-}
-
-/* Subsol (Footer) */
-footer {
-    background-color: #08080A !important;
-    border-top: 3px solid var(--primary-color);
-}
-
-footer h5 {
-    letter-spacing: 1px;
-}
-
-.transition-link {
-    transition: var(--transition-smooth);
-}
-
-.transition-link:hover {
-    color: var(--primary-color) !important;
-    padding-left: 5px;
-}
-
-/* ==========================================================================
-   10. MEDIA QUERIES (RESPONSIVENESS COMPLET)
-   ========================================================================== */
-
-@media (max-width: 767.98px) {
-    :root {
-        --navbar-height: 75px;
-    }
-    .hero-section h1 {
-        font-size: 2.3rem !important;
-    }
-    .page-padding {
-        padding-top: calc(var(--navbar-height) + 30px) !important;
-        padding-bottom: 50px;
-    }
-
-    /* ---- REGLAJE MENIU COMOD FĂRĂ HAMBURGER ---- */
-    /* 1. Ascundem complet butonul cu 3 linii */
-    .navbar-toggler {
-        display: none !important;
-    }
-
-    /* 2. Forțăm meniul să stea deschis nativ */
-    .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
-    }
-
-    /* 3. Așezăm link-urile orizontal și activăm scroll-ul lateral cu degetul */
-    .navbar-nav {
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        width: 100%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* 4. Stilzăm link-urile individuale să fie aerisite ca niște butoane */
-    .navbar-nav .nav-link {
-        padding: 6px 12px !important; 
-        margin-right: 8px !important;
-        border-bottom: none !important; /* Eliminăm vechea linie de dedesubt */
-        font-size: 0.9rem !important;
-    }
-
-    /* 5. Ascundem bara de scroll urâtă din subsolul meniului */
-    .navbar-nav::-webkit-scrollbar {
-        display: none !important;
-    }
-    /* ------------------------------------------- */
-
-    blockquote::before, 
-    blockquote::after {
-        font-size: 2.5rem;
-    }
-    .testimonial-item {
-        padding: 25px 20px;
-    }
-}
-
-/* Tablete (768px - 1199.98px) */
-@media (min-width: 768px) and (max-width: 1199.98px) {
-    .hero-section h1 {
-        font-size: 3.5rem !important;
-    }
-    .page-padding {
-        padding-top: calc(var(--navbar-height) + 40px) !important;
-    }
-}
-
-/* Desktop de rezoluție înaltă (≥1200px) */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1170px;
-    }
-}
-/* ==========================================================================
-   CONTROL EXACT DIMENSIUNI ȘI ALINIERE LOGO (FĂRĂ REZIDUURI)
-   ========================================================================== */
-
-/* Containerul principal flexibil al brandului */
-.premium-brand-flex {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Distanță ideală între mașină și text */
-    padding: 0 !important;
-    margin: 0;
-}
-
-/* LOGO-UL ACUM OCUPĂ MAXIMUL DE SPAȚIU UTIL DIN INTERIOR */
-.logo-premium-vector {
-    height: 80px; /* Înălțime mărită substanțial, perfectă pentru capsulă */
-    width: auto;  /* Raportul de aspect se păstrează automat datorită noului viewBox */
-    object-fit: contain;
-    background: transparent !important;
-    
-    /* Umbră fină de decupaj pentru a scoate mașina albă în evidență pe fundalul dark */
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
-    
-    transition: transform 0.25s ease;
-}
-
-/* Stil text modern */
-.brand-text-digital {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #FFFFFF !important;
-    text-transform: uppercase;
-    line-height: 1; /* Elimină orice padding nativ de sub text */
-}
-
-.brand-text-red {
-    color: #FF3D00 !important; /* Calibrat perfect cu nuanța nouă a vitezometrului */
-}
-
-/* Efect discret la hover */
-.premium-brand-flex:hover .logo-premium-vector {
-    transform: scale(1.05);
-}
-
-/* REGLAJE GENERALE CAPSULĂ NAV (Desktop) */
-@media (min-width: 992px) {
-    .navbar.navbar-premium-capsule {
-        top: 15px !important;
-        max-width: 1260px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 50px !important;
-        border: 1px solid #2D2D35 !important;
-        background-color: rgba(15, 15, 17, 0.94) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        padding: 6px 24px !important; /* Spacere optime pentru a acomoda logo-ul mărit */
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
-    }
-}
-
-/* CORECTARE AUTOMATĂ PENTRU MOBIL */
-@media (max-width: 991.98px) {
-    .logo-premium-vector {
-        height: 40px; /* Adaptare perfectă pentru ecrane mici */
-    }
-    .brand-text-digital {
-        font-size: 1.3rem;
-    }
+    transform: scale(1.1);
 }

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (counters.length > 0) {
         const startCounting = (counter) => {
             const target = +counter.getAttribute('data-target');
-            const speed = 150; // Cu cât numărul e mai mare, cu atât se împarte mai fin
+            const speed = 150;
             const increment = target / speed;
             
             let current = 0;

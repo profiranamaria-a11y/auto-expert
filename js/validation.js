@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Oprește trimiterea dacă există erori
+            event.preventDefault();
             let isFormValid = true;
 
             // Elemente din formular
@@ -27,28 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            // 1. Validare Nume (minim 3 caractere non-spațiu)
+            // Validare Nume (minim 3 caractere non-spațiu)
             validateField(fullName, fullName.value.trim().length >= 3);
 
-            // 2. Validare Telefon (Republica Moldova)
+            // Validare Telefon (Republica Moldova)
             // Curățăm textul de spații sau cratime pentru a valida doar cifrele pure
             const cleanPhoneValue = phone.value.trim().replace(/[\s\-]/g, '');
             
             // Regex flexibil pentru RM:
-            // - Permite format local pur din 8 cifre (ex: 78393815)
-            // - Permite format cu 0 în față din 9 cifre (ex: 078393815)
-            // - Permite prefix internațional (ex: +37378393815 sau +373078393815)
             const mdPhoneRegex = /^(\+373)?(0)?([6789]\d{7})$/;
             validateField(phone, mdPhoneRegex.test(cleanPhoneValue));
 
-            // 3. Validare Email standard
+            // Validare Email standard
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             validateField(email, emailRegex.test(email.value.trim()));
 
-            // 4. Validare Marcă Mașină (să nu fie goală)
+            // Validare Marca 
             validateField(carBrand, carBrand.value.trim() !== '');
 
-            // 5. Validare An Fabricație (Limita logică între 1990 și anul curent 2026)
+            // Validare An Fabricație (Limita logică între 1990 și anul curent 2026)
             const yearValue = parseInt(carYear.value, 10);
             validateField(carYear, !isNaN(yearValue) && yearValue >= 1990 && yearValue <= 2026);
 
@@ -64,14 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 form.reset(); // Golire câmpuri
 
-                // Curățare clase vizuale verzi după 4 secunde
+                // Curățare clase vizuale verzi după 8 sec
                 setTimeout(() => {
                     const validFields = form.querySelectorAll('.is-valid');
                     validFields.forEach(field => field.classList.remove('is-valid'));
                     if (successAlert) {
                         successAlert.classList.add('d-none');
                     }
-                }, 4000);
+                }, 8000);
             }
         });
     }

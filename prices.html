@@ -11,17 +11,25 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">AUTO <span class="text-primary-custom">EXPERT</span></a>
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-premium-capsule" aria-label="Meniu Principal">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand premium-brand-flex" href="index.html">
+                <img src="./img/logo/logo.svg" alt="Auto Expert Logo" class="logo-premium-vector">
+                <span class="brand-text-digital">
+                    AUTO <span class="brand-text-red">EXPERT</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afișează meniul">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li><a class="nav-link" href="index.html">Acasă</a></li>
-                    <li><a class="nav-link" href="services.html">Servicii</a></li>
-                    <li><a class="nav-link" href="team.html">Echipa</a></li>
-                    <li><a class="nav-link active" href="prices.html">Prețuri</a></li>
-                    <li><a class="nav-link" href="gallery.html">Galerie</a></li>
-                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Echipa</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="prices.html">Prețuri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -38,18 +46,36 @@
                 <div class="p-4 custom-card rounded">
                     <h3 class="text-white mb-4"><i class="fa-solid fa-calculator text-primary-custom me-2"></i>Calculator Estimare</h3>
                     <form id="calcForm">
-                        <div class="mb-3">
-                            <label for="serviceType" class="form-label text-white">Selectează Serviciul</label>
-                            <select id="serviceType" class="form-select bg-dark text-white border-secondary">
-                                <option value="0" selected disabled>Alege un serviciu...</option>
-                                <option value="600">Schimb Ulei și Filtre (600 MDL)</option>
-                                <option value="800">Înlocuire Plăcuțe Frână (800 MDL)</option>
-                                <option value="450">Diagnoză Computerizată (450 MDL)</option>
-                                <option value="2800">Vopsit Element Caroserie (2800 MDL)</option>
-                                <option value="400">Verificare Completă / Diagnostic (400 MDL)</option>
-                                <option value="4500">Schimb Kit Distribuție Lanț (4500 MDL)</option>
-                            </select>
-                        </div>
+                        <div class="mb-4">
+    <label class="form-label text-white fw-bold mb-3"><i class="fa-solid fa-gears text-primary-custom me-2"></i> Selectează Serviciile Necesare:</label>
+    
+    <div class="bg-dark p-3 rounded border border-secondary" id="servicesCheckboxContainer" style="max-height: 280px; overflow-y: auto;">
+        <div class="form-check mb-2">
+            <input class="form-check-input service-checkbox" type="checkbox" value="600" id="srvUlei">
+            <label class="form-check-label text-muted" for="srvUlei">Schimb Ulei și Filtre</label>
+        </div>
+        <div class="form-check mb-2">
+            <input class="form-check-input service-checkbox" type="checkbox" value="800" id="srvFrane">
+            <label class="form-check-label text-muted" for="srvFrane">Înlocuire Plăcuțe Frână</label>
+        </div>
+        <div class="form-check mb-2">
+            <input class="form-check-input service-checkbox" type="checkbox" value="450" id="srvDiagnoza">
+            <label class="form-check-label text-muted" for="srvDiagnoza">Diagnoză Computerizată</label>
+        </div>
+        <div class="form-check mb-2">
+            <input class="form-check-input service-checkbox" type="checkbox" value="2800" id="srvCaroserie">
+            <label class="form-check-label text-muted" for="srvCaroserie">Vopsit Element Caroserie</label>
+        </div>
+        <div class="form-check mb-2">
+            <input class="form-check-input service-checkbox" type="checkbox" value="400" id="srvDiagnostic">
+            <label class="form-check-label text-muted" for="srvDiagnostic">Verificare Completă / Diagnostic</label>
+        </div>
+        <div class="form-check mb-0">
+            <input class="form-check-input service-checkbox" type="checkbox" value="4500" id="srvDistributie">
+            <label class="form-check-label text-muted" for="srvDistributie">Schimb Kit Distribuție Lanț</label>
+        </div>
+    </div>
+</div>
                         <div class="mb-4">
                             <label class="form-label text-white d-block">Marcă / Clasă Vehicul</label>
                             <div class="form-check mb-2">

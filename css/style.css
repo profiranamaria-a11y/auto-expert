@@ -3,6 +3,7 @@
 :root {
     --primary: #D32F2F;
     --primary-hover: #B71C1C;
+    --accent-metallic: #78909C;
     --dark: #0F0F11;
     --section: #16161A;
     --card: #1F1F24;
@@ -20,7 +21,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Sans', sans-serif;
     background-color: var(--dark);
     color: var(--text-body);
     line-height: 1.6;

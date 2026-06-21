@@ -201,7 +201,7 @@
         let ascService = true;
         let ascPrice = true;
 
-        // 1. Sortare Alfabetică după Nume Serviciu
+        // Sort alfabet Nume serviciu
         if (btnService) {
             btnService.addEventListener("click", () => {
                 const rows = Array.from(tbody.querySelectorAll("tr"));
@@ -215,7 +215,7 @@
             });
         }
 
-        // 2. Sortare Numerică după Preț (Fără erori de string)
+        // Sortare pret
         if (btnPrice) {
             btnPrice.addEventListener("click", () => {
                 const rows = Array.from(tbody.querySelectorAll("tr"));

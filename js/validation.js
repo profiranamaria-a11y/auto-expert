@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const carYear = document.getElementById('carYear');
             const serviceDropdown = document.getElementById('serviceDropdown');
 
-            // Funcție helper pentru injectarea claselor Bootstrap 5
+            // helper pentru clasele Bootstrap 5
             const validateField = (input, condition) => {
                 if (condition) {
                     input.classList.remove('is-invalid');
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            // Validare Nume (minim 3 caractere non-spațiu)
+            // Validare Nume (minim 3 caractere fara spatiu)
             validateField(fullName, fullName.value.trim().length >= 3);
 
             // Validare Telefon (Republica Moldova)
-            // Curățăm textul de spații sau cratime pentru a valida doar cifrele pure
+            // Curatare text de spatii sau cratime pentru a valida doar cifrele pure
             const cleanPhoneValue = phone.value.trim().replace(/[\s\-]/g, '');
             
             // Regex flexibil pentru RM:
@@ -45,23 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validare Marca 
             validateField(carBrand, carBrand.value.trim() !== '');
 
-            // Validare An Fabricație (Limita logică între 1990 și anul curent 2026)
+            // Validare An fabricatie (intre 1990 - 2026)
             const yearValue = parseInt(carYear.value, 10);
             validateField(carYear, !isNaN(yearValue) && yearValue >= 1990 && yearValue <= 2026);
 
             // 6. Validare Selector Serviciu
             validateField(serviceDropdown, serviceDropdown.value !== '');
 
-            // Acțiune finală în caz de succes
+            // Actiune finala în caz de succes
             if (isFormValid) {
                 if (successAlert) {
                     successAlert.classList.remove('d-none');
                     successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
                 
-                form.reset(); // Golire câmpuri
+                form.reset(); // Golire campuri
 
-                // Curățare clase vizuale verzi după 8 sec
                 setTimeout(() => {
                     const validFields = form.querySelectorAll('.is-valid');
                     validFields.forEach(field => field.classList.remove('is-valid'));

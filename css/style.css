@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: var(--dark);
     color: var(--text-body);
     line-height: 1.6;
@@ -51,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 140px !important;
     padding-bottom: 80px;
 }
-
 /*navbar*/
 .navbar.navbar-premium-capsule {
     background-color: var(--dark) !important; 
@@ -61,20 +60,18 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
 }
-
-/*capsula rotunda ecrane mari */
+/* ecrane mari */
 @media (min-width: 992px) {
     .navbar.navbar-premium-capsule {
         top: 20px !important;
         max-width: 1260px;
         margin: 0 auto;
-        border-radius: 50px !important; /* Margini rotunjite pronunțate */
+        border-radius: 50px !important; /* Margini rotunjite*/
         border: 2px solid var(--border) !important;
-        border-bottom: 2px solid var(--primary) !important; /* Linie roșie la bază */
+        border-bottom: 2px solid var(--primary) !important; /* Linie rosie */
         padding: 5px 30px; 
     }
 }
-
 /* Logo/text/imagine */
 .premium-brand-flex {
     display: flex;
@@ -82,17 +79,14 @@ h1, h2, h3, h4, h5, h6 {
     gap: 12px;
     text-decoration: none;
 }
-
 .logo-premium-vector {
     height: 70px; 
     width: auto;
     transition: transform 0.55s ease;
 }
-
 .premium-brand-flex:hover .logo-premium-vector {
     transform: scale(1.05);
 }
-
 .brand-text-digital {
     font-family: 'Oswald', sans-serif;
     font-size: 1.25rem;
@@ -100,11 +94,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text) !important;
     line-height: 1;
 }
-
 .brand-text-red {
     color: #FF3D00 !important;
 }
-
 /* Link-uri/hover effect */
 .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
@@ -115,12 +107,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     transition: color 0.3s ease;
 }
-
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--primary) !important;
 }
-
 @media (min-width: 1200px) {
     .navbar-nav .nav-link::after {
         content: '';
@@ -137,7 +127,6 @@ h1, h2, h3, h4, h5, h6 {
         width: calc(100% - 32px);
     }
 }
-
 .navbar-toggler {
     border: 1px solid var(--primary);
     padding: 6px 10px;
@@ -242,13 +231,11 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     width: 100%;
 }
-
 /*preturi/team */
 .table-dark {
     --bs-table-bg: var(--card) !important;
     border-color: var(--border) !important;
 }
-
 #pricesTable th {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -257,29 +244,24 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px;
     border-bottom: 2px solid var(--primary);
 }
-
 #pricesTable td {
     padding: 16px;
     color: var(--text-body) !important;
 }
-
 #pricesTable tr:hover td {
     color: var(--text) !important;
 }
-
 .team-member-name {
     color: var(--text) !important;
     font-family: 'Oswald', sans-serif;
     font-size: 1.4rem;
 }
-
 .team-member-role {
     color: var(--primary) !important;
     font-weight: 700;
     text-transform: uppercase;
     font-size: .9rem;
 }
-
 /* formulare */
 .form-control, .form-select, input[type="date"] {
     background-color: var(--dark) !important;
@@ -289,18 +271,15 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
-
 .form-control:focus, .form-select:focus {
     border-color: var(--primary) !important;
     box-shadow: var(--glow) !important;
 }
-
 /*footer/back to top*/
 footer {
     background-color: #0A0A0C;
     border-top: 1px solid var(--border);
 }
-
 #backToTop {
     position: fixed;
     bottom: 25px;
@@ -318,7 +297,6 @@ footer {
     box-shadow: var(--glow);
     transition: all 0.2s ease;
 }
-
 #backToTop:hover {
     background-color: var(--primary-hover);
     transform: scale(1.1);

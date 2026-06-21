@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Funcționalitate Buton "Back to Top"
+    // Buton Back to Top
     const backToTopBtn = document.getElementById('backToTop');
     
     if (backToTopBtn) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Animație Numere (Counters) cu IntersectionObserver
+    // Animatie Numere (Counters) cu IntersectionObserver
     const counters = document.querySelectorAll('.counter-val');
     
     if (counters.length > 0) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     startCounting(entry.target);
-                    observer.unobserve(entry.target); // Rulează o singură dată
+                    observer.unobserve(entry.target); // Rulează o sing. data
                 }
             });
         }, observerOptions);

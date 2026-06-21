@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filterButtons.length > 0 && galleryItems.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Schimbă clasa activă pe butoane
+                
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const itemCategory = item.getAttribute('data-category');
 
                     if (targetFilter === 'all' || targetFilter === itemCategory) {
-                        // Afișează elementul cu animație
+                        //Afis. elementul cu animatie
                         item.style.display = 'block';
                         setTimeout(() => {
                             item.style.opacity = '1';

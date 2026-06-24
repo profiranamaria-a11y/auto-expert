@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-    --primary: #D32F2F;
+    --primary: #ff0000;
     --primary-hover: #B71C1C;
     --accent-metallic: #78909C;
     --dark: #0F0F11;
@@ -13,6 +13,7 @@
     --text-muted: #A0A0AA;
     --glow: 0 0 15px rgba(211,47,47,0.4);
 }
+
 
 *, *::before, *::after {
     box-sizing: border-box;

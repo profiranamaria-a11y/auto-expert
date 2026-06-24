@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let multiplier = 1.0;
 
-            // Coeficientul pentru clasa masinii (1.0 sau 1.3)
             carClassRadios.forEach(radio => {
                 if (radio.checked) {
                     multiplier = parseFloat(radio.value) || 1.0;

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         item.style.transform = 'scale(0.8)';
                         setTimeout(() => {
                             item.style.display = 'none';
-                        }, 400); // Sincronizat cu CSS transitions
+                        }, 400); 
                     }
                 });
             });
